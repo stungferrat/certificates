@@ -374,9 +374,8 @@ IEEE SPS-BNMIT`;
       status.textContent = 'Dispatching emails...';
       progressLeft.textContent = 'Sending...';
 
-      const res = await fetch(SCRIPT_URL, {
+      const res = await fetch(SCRIPT_URL + '?t=' + Date.now(), {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           driveLink: DRIVE_LINK,
           subject: EMAIL_SUBJ,
