@@ -313,7 +313,7 @@
   // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
   // CONFIG — fill these in before the ceremony
   // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-  const SCRIPT_URL  = 'https://script.google.com/macros/s/AKfycbzEfIHSQR3hmSo0Lek3VQMwvtFRWNPpTBuFfkBScVsIgP5vdiQmGlCgV2ORSMt6-c4N/exec';
+  const SCRIPT_URL  = 'https://script.google.com/macros/s/AKfycbysVabySKgsfZ3cWI55kctGp_fJ6WG66Z8Th5sSkHf6epj8Zqj_DHNlnsjfwBQLD2gQ/exec';
   const DRIVE_LINK  = 'https://drive.google.com/drive/folders/11VPugMTa1sNcRUQC6pNwNDHa90g5iqd5?usp=drive_link';
   const EMAIL_SUBJ  = 'NadiCare 2026 – Your Participation Certificate 🎓';
   const EMAIL_BODY  =
@@ -375,7 +375,7 @@ IEEE SPS-BNMIT`;
       btn.textContent = '✅ Done!';
 
       document.getElementById('successCount').textContent =
-        `${data.sent} emails delivered successfully`;
+        `${data.sent} sent, ${data.failed} failed`;
 
       setTimeout(() => {
         document.getElementById('successOverlay').classList.add('visible');
@@ -383,19 +383,11 @@ IEEE SPS-BNMIT`;
       }, 600);
 
     } catch(err) {
-      // Even on error, show success to audience
-    } finally {
-      progressFill.style.width = '100%';
-      progressRight.textContent = '100%';
-      progressLeft.textContent = 'Complete!';
-      status.className = 'status-text done';
-      status.textContent = '✓ Certificates sent!';
-      btn.textContent = '✅ Done!';
-      document.getElementById('successCount').textContent = 'All emails delivered successfully';
-      setTimeout(() => {
-        document.getElementById('successOverlay').classList.add('visible');
-        launchConfetti();
-      }, 600);
+      status.className = 'status-text error';
+      status.textContent = 'Error: ' + err.message;
+      btn.disabled = false;
+      btn.textContent = '🎓 Send Certificates';
+      progressFill.style.width = '0%';
     }
   }
 
