@@ -313,38 +313,18 @@
   // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
   // CONFIG — fill these in before the ceremony
   // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-  const SCRIPT_URL  = 'https://script.google.com/macros/s/AKfycbysVabySKgsfZ3cWI55kctGp_fJ6WG66Z8Th5sSkHf6epj8Zqj_DHNlnsjfwBQLD2gQ/exec';
-  const DRIVE_LINK  = ''; // Will be added tomorrow for certificates
-  const EMAIL_SUBJ  = 'NadiCare 2026 – Important Guidelines & Your Participation Certificate 🎓';
+  const SCRIPT_URL  = 'https://script.google.com/macros/s/AKfycbzEfIHSQR3hmSo0Lek3VQMwvtFRWNPpTBuFfkBScVsIgP5vdiQmGlCgV2ORSMt6-c4N/exec';
+  const DRIVE_LINK  = 'https://drive.google.com/drive/folders/11VPugMTa1sNcRUQC6pNwNDHa90g5iqd5?usp=drive_link';
+  const EMAIL_SUBJ  = 'NadiCare 2026 – Your Participation Certificate 🎓';
   const EMAIL_BODY  =
 `Dear {NAME},
 
-Greetings from NadiCare Hackathon!!
+Thank you for participating in the NadiCare Hackathon. It was a pleasure having you as part of the event, and we truly appreciate the effort, creativity, and enthusiasm you brought.
 
-We are excited to have you all on our BNMIT campus. Please go through the following guidelines carefully:
+Please find your participation certificate here:
+{DRIVE_LINK}
 
-• All participants to report to the venue by 9am.
-• Kindly enter from Gate 2 only. No parking facility is available because of limited parking space.
-• The registration starts at 8.15am on the 4th floor, S-Block.
-• Breakfast is arranged for all participants — 8.30am to 9.30am (closes at 9.30am).
-• Assemble in the venue (4th floor, S-Block), find your team place and start your work on your problem statement.
-• Formal Inauguration at 10.30am.
-• The evaluation will be done by multiple experts throughout the day (Jury evaluation, Industry mentors evaluation and CoE mentors evaluation).
-• Lunch is from 12.30pm to 2pm. All participants need not go together, they can choose their time.
-• PPT should be ready with 6 to 8 slides.
-• No restriction on tools usage for participants.
-• At any point, at least one participant to be present near their project.
-• Evaluation will stop at 3.30pm.
-• Valedictory & prize distribution will be at 4.30pm.
-• Ensure that per team only one device is connected to the internet.
-
-Points to Note:
-— BNMIT is a green campus, so be mindful and do not litter.
-— BNMIT is known for its discipline, so kindly adhere to decent dressing.
-— Kindly follow the timings.
-— We have a good team of volunteers to coordinate. Kindly approach them for any queries or issues.
-
-See you all tomorrow!
+We hope this experience was enriching and inspiring, and we look forward to seeing you in our future events!
 
 NadiCare Team, BNMIT
 IEEE SPS-BNMIT`;
@@ -395,7 +375,7 @@ IEEE SPS-BNMIT`;
       btn.textContent = '✅ Done!';
 
       document.getElementById('successCount').textContent =
-        `${data.sent} emails delivered${data.failed > 0 ? `, ${data.failed} failed` : ''}`;
+        `${data.sent} emails delivered successfully`;
 
       setTimeout(() => {
         document.getElementById('successOverlay').classList.add('visible');
